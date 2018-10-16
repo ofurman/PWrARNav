@@ -13,6 +13,14 @@
 		B71CCAC1216F8FFA009519AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71CCABF216F8FFA009519AC /* Main.storyboard */; };
 		B71CCAC3216F8FFB009519AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B71CCAC2216F8FFB009519AC /* Assets.xcassets */; };
 		B71CCAC6216F8FFB009519AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71CCAC4216F8FFB009519AC /* LaunchScreen.storyboard */; };
+		B755DA942173885B0035F21C /* MatrixHelperRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA932173885B0035F21C /* MatrixHelperRotation.swift */; };
+		B755DA9621738EB80035F21C /* BaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA9521738EB80035F21C /* BaseNode.swift */; };
+		B755DA982173CCAB0035F21C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA972173CCAB0035F21C /* LocationManager.swift */; };
+		B79133E2217630EA00C819C2 /* CLLocationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79133E1217630EA00C819C2 /* CLLocationExt.swift */; };
+		B79133E4217632C900C819C2 /* SCNVector3Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79133E3217632C900C819C2 /* SCNVector3Ext.swift */; };
+		B79133E621767E9700C819C2 /* DoubleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79133E521767E9700C819C2 /* DoubleExt.swift */; };
+		B79133E821767EB800C819C2 /* CLLocationCoordinate2DExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79133E721767EB800C819C2 /* CLLocationCoordinate2DExt.swift */; };
+		B7D24DFF2174CEA5008B93DA /* MessagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D24DFE2174CEA5008B93DA /* MessagePresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,14 @@
 		B71CCAC2216F8FFB009519AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B71CCAC5216F8FFB009519AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B71CCAC7216F8FFB009519AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B755DA932173885B0035F21C /* MatrixHelperRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixHelperRotation.swift; sourceTree = "<group>"; };
+		B755DA9521738EB80035F21C /* BaseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNode.swift; sourceTree = "<group>"; };
+		B755DA972173CCAB0035F21C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		B79133E1217630EA00C819C2 /* CLLocationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationExt.swift; sourceTree = "<group>"; };
+		B79133E3217632C900C819C2 /* SCNVector3Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNVector3Ext.swift; sourceTree = "<group>"; };
+		B79133E521767E9700C819C2 /* DoubleExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExt.swift; sourceTree = "<group>"; };
+		B79133E721767EB800C819C2 /* CLLocationCoordinate2DExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DExt.swift; sourceTree = "<group>"; };
+		B7D24DFE2174CEA5008B93DA /* MessagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +75,44 @@
 				B71CCAB9216F8FF9009519AC /* AppDelegate.swift */,
 				B71CCABB216F8FFA009519AC /* art.scnassets */,
 				B71CCABD216F8FFA009519AC /* ViewController.swift */,
+				B79133E921767F1200C819C2 /* Services */,
+				B755DA922173815A0035F21C /* Extensions */,
 				B71CCABF216F8FFA009519AC /* Main.storyboard */,
 				B71CCAC2216F8FFB009519AC /* Assets.xcassets */,
 				B71CCAC4216F8FFB009519AC /* LaunchScreen.storyboard */,
 				B71CCAC7216F8FFB009519AC /* Info.plist */,
 			);
 			path = PwrARNav;
+			sourceTree = "<group>";
+		};
+		B755DA922173815A0035F21C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B79133E3217632C900C819C2 /* SCNVector3Ext.swift */,
+				B79133E721767EB800C819C2 /* CLLocationCoordinate2DExt.swift */,
+				B79133E1217630EA00C819C2 /* CLLocationExt.swift */,
+				B79133E521767E9700C819C2 /* DoubleExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B79133E921767F1200C819C2 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B79133EA21767F2000C819C2 /* Helpers */,
+				B755DA972173CCAB0035F21C /* LocationManager.swift */,
+				B7D24DFE2174CEA5008B93DA /* MessagePresenter.swift */,
+				B755DA9521738EB80035F21C /* BaseNode.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B79133EA21767F2000C819C2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B755DA932173885B0035F21C /* MatrixHelperRotation.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,7 +188,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B71CCABE216F8FFA009519AC /* ViewController.swift in Sources */,
+				B755DA942173885B0035F21C /* MatrixHelperRotation.swift in Sources */,
+				B79133E821767EB800C819C2 /* CLLocationCoordinate2DExt.swift in Sources */,
+				B755DA982173CCAB0035F21C /* LocationManager.swift in Sources */,
+				B7D24DFF2174CEA5008B93DA /* MessagePresenter.swift in Sources */,
+				B79133E621767E9700C819C2 /* DoubleExt.swift in Sources */,
+				B755DA9621738EB80035F21C /* BaseNode.swift in Sources */,
+				B79133E4217632C900C819C2 /* SCNVector3Ext.swift in Sources */,
 				B71CCABA216F8FF9009519AC /* AppDelegate.swift in Sources */,
+				B79133E2217630EA00C819C2 /* CLLocationExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
