@@ -28,6 +28,7 @@ class MenuController: UIViewController {
     }
 }
 
+//MARK: - Table View
 extension MenuController: UITableViewDelegate, UITableViewDataSource {
 
     func initializeTableView() {
@@ -61,6 +62,7 @@ extension MenuController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+//MARK: - SearchBar
 extension MenuController: UISearchResultsUpdating {
     
     func setUpSearchController() {
