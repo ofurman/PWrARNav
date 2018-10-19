@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B70D2D30217760300064A687 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B70D2D2F217760300064A687 /* Menu.storyboard */; };
+		B70D2D32217760ED0064A687 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D2D31217760ED0064A687 /* MenuController.swift */; };
 		B71CCABA216F8FF9009519AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71CCAB9216F8FF9009519AC /* AppDelegate.swift */; };
 		B71CCABC216F8FFA009519AC /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B71CCABB216F8FFA009519AC /* art.scnassets */; };
 		B71CCABE216F8FFA009519AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71CCABD216F8FFA009519AC /* ViewController.swift */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B70D2D2F217760300064A687 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
+		B70D2D31217760ED0064A687 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		B71CCAB6216F8FF9009519AC /* PwrARNav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PwrARNav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71CCAB9216F8FF9009519AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B71CCABB216F8FFA009519AC /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -75,9 +79,11 @@
 				B71CCAB9216F8FF9009519AC /* AppDelegate.swift */,
 				B71CCABB216F8FFA009519AC /* art.scnassets */,
 				B71CCABD216F8FFA009519AC /* ViewController.swift */,
+				B70D2D31217760ED0064A687 /* MenuController.swift */,
 				B79133E921767F1200C819C2 /* Services */,
 				B755DA922173815A0035F21C /* Extensions */,
 				B71CCABF216F8FFA009519AC /* Main.storyboard */,
+				B70D2D2F217760300064A687 /* Menu.storyboard */,
 				B71CCAC2216F8FFB009519AC /* Assets.xcassets */,
 				B71CCAC4216F8FFB009519AC /* LaunchScreen.storyboard */,
 				B71CCAC7216F8FFB009519AC /* Info.plist */,
@@ -173,6 +179,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B70D2D30217760300064A687 /* Menu.storyboard in Resources */,
 				B71CCABC216F8FFA009519AC /* art.scnassets in Resources */,
 				B71CCAC6216F8FFB009519AC /* LaunchScreen.storyboard in Resources */,
 				B71CCAC3216F8FFB009519AC /* Assets.xcassets in Resources */,
@@ -192,6 +199,7 @@
 				B79133E821767EB800C819C2 /* CLLocationCoordinate2DExt.swift in Sources */,
 				B755DA982173CCAB0035F21C /* LocationManager.swift in Sources */,
 				B7D24DFF2174CEA5008B93DA /* MessagePresenter.swift in Sources */,
+				B70D2D32217760ED0064A687 /* MenuController.swift in Sources */,
 				B79133E621767E9700C819C2 /* DoubleExt.swift in Sources */,
 				B755DA9621738EB80035F21C /* BaseNode.swift in Sources */,
 				B79133E4217632C900C819C2 /* SCNVector3Ext.swift in Sources */,
