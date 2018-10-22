@@ -15,6 +15,7 @@
 		B71CCAC1216F8FFA009519AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71CCABF216F8FFA009519AC /* Main.storyboard */; };
 		B71CCAC3216F8FFB009519AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B71CCAC2216F8FFB009519AC /* Assets.xcassets */; };
 		B71CCAC6216F8FFB009519AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71CCAC4216F8FFB009519AC /* LaunchScreen.storyboard */; };
+		B753DA45217E2D9500E4FC5B /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B753DA44217E2D9500E4FC5B /* APIRouter.swift */; };
 		B755DA942173885B0035F21C /* MatrixHelperRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA932173885B0035F21C /* MatrixHelperRotation.swift */; };
 		B755DA9621738EB80035F21C /* BaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA9521738EB80035F21C /* BaseNode.swift */; };
 		B755DA982173CCAB0035F21C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA972173CCAB0035F21C /* LocationManager.swift */; };
@@ -36,6 +37,7 @@
 		B71CCAC2216F8FFB009519AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B71CCAC5216F8FFB009519AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B71CCAC7216F8FFB009519AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B753DA44217E2D9500E4FC5B /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		B755DA932173885B0035F21C /* MatrixHelperRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixHelperRotation.swift; sourceTree = "<group>"; };
 		B755DA9521738EB80035F21C /* BaseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNode.swift; sourceTree = "<group>"; };
 		B755DA972173CCAB0035F21C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 				B755DA922173815A0035F21C /* Extensions */,
 				B78A62C4217A30B60045846C /* Assets */,
 				B78A62C6217A30D40045846C /* Views */,
+				B753DA44217E2D9500E4FC5B /* APIRouter.swift */,
 			);
 			path = PwrARNav;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B71CCABE216F8FFA009519AC /* ViewController.swift in Sources */,
+				B753DA45217E2D9500E4FC5B /* APIRouter.swift in Sources */,
 				B755DA942173885B0035F21C /* MatrixHelperRotation.swift in Sources */,
 				B79133E821767EB800C819C2 /* CLLocationCoordinate2DExt.swift in Sources */,
 				B755DA982173CCAB0035F21C /* LocationManager.swift in Sources */,

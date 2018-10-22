@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     private var currentLocation: CLLocation?
     private var updatedLocations = [CLLocation]()
     internal var startingLocation: CLLocation!
-    private let destinationLocation = CLLocation(latitude: 51.103102708815086, longitude: 17.0854516806387)
+    private var destinationLocation: CLLocation!
     
     var locationService: LocationManager?
     
@@ -36,13 +36,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        presentLocationSetupMessage()
+        
         setupScene()
         setupLocationService()
     }
     
     private func setupLocationService() {
         locationService = LocationManager()
-        locationService?.delegate = self as? LocationManagerDelegate
+        locationService?.delegate = self
     }
     
     private func setupScene() {
@@ -51,6 +53,32 @@ class ViewController: UIViewController {
         let scene = SCNScene()
         sceneView.scene = scene
         runSession()
+    }
+    
+    private func presentLocationSetupMessage() {
+        let ac = UIAlertController(title: "Choose location", message: "Choose test location", preferredStyle: .alert)
+        ac.addTextField { (textField) in
+            textField.placeholder = "Latitude"
+        }
+        ac.addTextField { (textField) in
+            textField.placeholder = "Longtitude"
+        }
+        let saveAction = UIAlertAction(title: "Save", style: .default) { (alert) in
+            let first = ac.textFields![0] as UITextField
+            let second = ac.textFields![1] as UITextField
+            let latitude = first.text
+            let longtitude = second.text
+            if let latitude = latitude, let longtitude = longtitude {
+                let lat = Double(latitude)!
+                let lon = Double(longtitude)!
+                self.destinationLocation = CLLocation(latitude: lat, longitude: lon)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        ac.addAction(saveAction)
+        ac.addAction(cancelAction)
+        self.present(ac, animated: true)
+        navigationController?.navigationBar.isHidden = true
     }
 }
 
