@@ -10,9 +10,9 @@ import UIKit
 
 class MenuController: UIViewController {
     
-    let menudata = ["C-1", "C-2", "C-3", "C-4", "C-5"]
+    var menudata = [Location]()
     let cellReuseIdentifier = "menuCell"
-    var filteredLocations = [String]()
+    var filteredLocations = [Location]()
     let searchController = UISearchController(searchResultsController: nil)
 
     @IBOutlet weak var tableView: UITableView?
@@ -20,11 +20,26 @@ class MenuController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        populateMenuData()
         initializeTableView()
         setUpSearchController()
         
 
         // Do any additional setup after loading the view.
+    }
+    
+    func populateMenuData() {
+//        getLocations { (result) in
+//            switch result {
+//            case .failure(let error):
+//                fatalError(error.localizedDescription)
+//            case .success(let locations):
+//                for location in locations {
+//                    self.menudata.append(location)
+//                }
+//                self.tableView?.reloadData()
+//            }
+//        }
     }
 }
 
@@ -48,9 +63,9 @@ extension MenuController: UITableViewDelegate, UITableViewDataSource {
         let cell = (self.tableView?.dequeueReusableCell(withIdentifier: cellReuseIdentifier))!
         let locationName: String
         if isFiltering() {
-            locationName = filteredLocations[indexPath.row]
+            locationName = filteredLocations[indexPath.row].name
         } else {
-            locationName = menudata[indexPath.row]
+            locationName = menudata[indexPath.row].name
         }
         cell.textLabel?.text = locationName
         return cell
@@ -86,7 +101,7 @@ extension MenuController: UISearchResultsUpdating {
     
     func filterContentForSearchText(_ searchText: String) {
         filteredLocations = menudata.filter({ (menuitem) -> Bool in
-            return menuitem.lowercased().contains(searchText.lowercased())
+            return menuitem.name.lowercased().contains(searchText.lowercased())
         })
         
         tableView?.reloadData()
