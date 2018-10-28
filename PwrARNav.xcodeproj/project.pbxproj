@@ -16,18 +16,17 @@
 		B71CCAC3216F8FFB009519AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B71CCAC2216F8FFB009519AC /* Assets.xcassets */; };
 		B71CCAC6216F8FFB009519AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71CCAC4216F8FFB009519AC /* LaunchScreen.storyboard */; };
 		B72D815F2180AC1D00D7FC27 /* PwrARNav.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B72D815D2180AC1D00D7FC27 /* PwrARNav.xcdatamodeld */; };
-		B72D81612180B49B00D7FC27 /* DataCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B72D81602180B49B00D7FC27 /* DataCoordinator.swift */; };
-		B753DA45217E2D9500E4FC5B /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B753DA44217E2D9500E4FC5B /* APIRouter.swift */; };
 		B753DA47217E326400E4FC5B /* LocationStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B753DA46217E326400E4FC5B /* LocationStruct.swift */; };
 		B755DA942173885B0035F21C /* MatrixHelperRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA932173885B0035F21C /* MatrixHelperRotation.swift */; };
 		B755DA9621738EB80035F21C /* BaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA9521738EB80035F21C /* BaseNode.swift */; };
 		B755DA982173CCAB0035F21C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA972173CCAB0035F21C /* LocationManager.swift */; };
-		B78BE410217F4152007082EF /* APIRouterv1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78BE40F217F4152007082EF /* APIRouterv1.swift */; };
+		B76320A82181E91B00D3083D /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76320A72181E91B00D3083D /* LocationController.swift */; };
 		B79133E2217630EA00C819C2 /* CLLocationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79133E1217630EA00C819C2 /* CLLocationExt.swift */; };
 		B79133E4217632C900C819C2 /* SCNVector3Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79133E3217632C900C819C2 /* SCNVector3Ext.swift */; };
 		B79133E621767E9700C819C2 /* DoubleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79133E521767E9700C819C2 /* DoubleExt.swift */; };
 		B79133E821767EB800C819C2 /* CLLocationCoordinate2DExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79133E721767EB800C819C2 /* CLLocationCoordinate2DExt.swift */; };
 		B7D24DFF2174CEA5008B93DA /* MessagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D24DFE2174CEA5008B93DA /* MessagePresenter.swift */; };
+		B7FA59B22184C64A00D8BB4B /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FA59B12184C64A00D8BB4B /* LocationViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,18 +41,17 @@
 		B71CCAC5216F8FFB009519AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B71CCAC7216F8FFB009519AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B72D815E2180AC1D00D7FC27 /* PwrARNav.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PwrARNav.xcdatamodel; sourceTree = "<group>"; };
-		B72D81602180B49B00D7FC27 /* DataCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCoordinator.swift; sourceTree = "<group>"; };
-		B753DA44217E2D9500E4FC5B /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		B753DA46217E326400E4FC5B /* LocationStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStruct.swift; sourceTree = "<group>"; };
 		B755DA932173885B0035F21C /* MatrixHelperRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixHelperRotation.swift; sourceTree = "<group>"; };
 		B755DA9521738EB80035F21C /* BaseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNode.swift; sourceTree = "<group>"; };
 		B755DA972173CCAB0035F21C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		B78BE40F217F4152007082EF /* APIRouterv1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouterv1.swift; sourceTree = "<group>"; };
+		B76320A72181E91B00D3083D /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		B79133E1217630EA00C819C2 /* CLLocationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationExt.swift; sourceTree = "<group>"; };
 		B79133E3217632C900C819C2 /* SCNVector3Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNVector3Ext.swift; sourceTree = "<group>"; };
 		B79133E521767E9700C819C2 /* DoubleExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExt.swift; sourceTree = "<group>"; };
 		B79133E721767EB800C819C2 /* CLLocationCoordinate2DExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DExt.swift; sourceTree = "<group>"; };
 		B7D24DFE2174CEA5008B93DA /* MessagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePresenter.swift; sourceTree = "<group>"; };
+		B7FA59B12184C64A00D8BB4B /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +92,9 @@
 				B755DA922173815A0035F21C /* Extensions */,
 				B78A62C4217A30B60045846C /* Assets */,
 				B78A62C6217A30D40045846C /* Views */,
-				B76C6DF5217E7AF300DC6E31 /* Network */,
-				B72D81602180B49B00D7FC27 /* DataCoordinator.swift */,
+				B76320A62181E08800D3083D /* Model */,
+				B76C6DF5217E7AF300DC6E31 /* Controller */,
+				B7FA59B32184C64F00D8BB4B /* ViewModels */,
 			);
 			path = PwrARNav;
 			sourceTree = "<group>";
@@ -111,14 +110,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		B76C6DF5217E7AF300DC6E31 /* Network */ = {
+		B76320A62181E08800D3083D /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B78BE40F217F4152007082EF /* APIRouterv1.swift */,
-				B753DA44217E2D9500E4FC5B /* APIRouter.swift */,
 				B753DA46217E326400E4FC5B /* LocationStruct.swift */,
 			);
-			path = Network;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B76C6DF5217E7AF300DC6E31 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B76320A72181E91B00D3083D /* LocationController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		B78A62C4217A30B60045846C /* Assets */ = {
@@ -166,6 +171,14 @@
 				B755DA932173885B0035F21C /* MatrixHelperRotation.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B7FA59B32184C64F00D8BB4B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B7FA59B12184C64A00D8BB4B /* LocationViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,19 +256,18 @@
 			files = (
 				B71CCABE216F8FFA009519AC /* ViewController.swift in Sources */,
 				B72D815F2180AC1D00D7FC27 /* PwrARNav.xcdatamodeld in Sources */,
-				B753DA45217E2D9500E4FC5B /* APIRouter.swift in Sources */,
 				B753DA47217E326400E4FC5B /* LocationStruct.swift in Sources */,
 				B755DA942173885B0035F21C /* MatrixHelperRotation.swift in Sources */,
 				B79133E821767EB800C819C2 /* CLLocationCoordinate2DExt.swift in Sources */,
 				B755DA982173CCAB0035F21C /* LocationManager.swift in Sources */,
-				B78BE410217F4152007082EF /* APIRouterv1.swift in Sources */,
 				B7D24DFF2174CEA5008B93DA /* MessagePresenter.swift in Sources */,
+				B7FA59B22184C64A00D8BB4B /* LocationViewModel.swift in Sources */,
 				B70D2D32217760ED0064A687 /* MenuController.swift in Sources */,
 				B79133E621767E9700C819C2 /* DoubleExt.swift in Sources */,
 				B755DA9621738EB80035F21C /* BaseNode.swift in Sources */,
 				B79133E4217632C900C819C2 /* SCNVector3Ext.swift in Sources */,
 				B71CCABA216F8FF9009519AC /* AppDelegate.swift in Sources */,
-				B72D81612180B49B00D7FC27 /* DataCoordinator.swift in Sources */,
+				B76320A82181E91B00D3083D /* LocationController.swift in Sources */,
 				B79133E2217630EA00C819C2 /* CLLocationExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

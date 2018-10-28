@@ -12,7 +12,7 @@
         <!--Menu Controller-->
         <scene sceneID="Jfr-5O-Mk6">
             <objects>
-                <viewController id="4Ti-zT-h5X" customClass="MenuController" customModule="PwrARNav" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuController" id="4Ti-zT-h5X" customClass="MenuController" customModule="PwrARNav" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NNy-Mt-a7m">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
