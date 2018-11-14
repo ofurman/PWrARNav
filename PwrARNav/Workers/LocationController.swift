@@ -12,16 +12,16 @@ import CoreData
 typealias FetchItemsCompletionBlock = (_ success: Bool, _ error: NSError?) -> Void
 
 protocol LocationControllerDelegate {
-    var items: [LocationViewModel?]? { get }
+    var items: [Location?]? { get }
     var itemCount: Int { get }
     
-    func item(at index: Int) -> LocationViewModel?
+    func item(at index: Int) -> Location?
     func fetchItems(completion: @escaping FetchItemsCompletionBlock)
     func fetchItemsFromStorage(completion: @escaping FetchItemsCompletionBlock)
 }
 
 extension LocationControllerDelegate {
-    var items: [LocationViewModel?]? {
+    var items: [Location?]? {
         return items
     }
     
@@ -29,7 +29,7 @@ extension LocationControllerDelegate {
         return items?.count ?? 0
     }
     
-    func item(at index: Int) -> LocationViewModel? {
+    func item(at index: Int) -> Location? {
         guard index >= 0 && index < itemCount else { return nil }
         return items?[index] ?? nil
     }
@@ -48,7 +48,7 @@ class LocationController: LocationControllerDelegate {
         }
     }
     
-    func item(at index: Int) -> LocationViewModel? {
+    func item(at index: Int) -> Location? {
         guard index >= 0 && index < itemCount else { return nil }
         return items?[index] ?? nil
     }
@@ -60,7 +60,7 @@ class LocationController: LocationControllerDelegate {
     
     private static let entityName = "Location"
     
-    var items: [LocationViewModel?]? = []
+    var items: [Location?]? = []
     
     private var fetchItemsCompletionBlock: FetchItemsCompletionBlock?
     
@@ -75,10 +75,10 @@ class LocationController: LocationControllerDelegate {
 
 private extension LocationController {
     
-    static func initViewModels(_ locations: [Location?]) -> [LocationViewModel?] {
+    static func initViewModels(_ locations: [ManagedLocation?]) -> [Location?] {
         return locations.map { location in
             if let location = location {
-                return LocationViewModel(location: location)
+                return Location(location: location)
             } else {
                 return nil
             }
@@ -98,7 +98,7 @@ private extension LocationController {
             let managedObjectContext = persistentContainer.viewContext
             let decoder = JSONDecoder()
             decoder.userInfo[codingUserInfoManagedObjectContext] = managedObjectContext
-            _ = try decoder.decode([Location].self, from: jsonData)
+            _ = try decoder.decode([ManagedLocation].self, from: jsonData)
             try managedObjectContext.save()
             return true
         } catch let error {
@@ -118,9 +118,9 @@ private extension LocationController {
         }
     }
     
-    func fetchFromStorage() -> [Location]? {
+    func fetchFromStorage() -> [ManagedLocation]? {
         let managedObjectContext = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<Location>(entityName: LocationController.entityName)
+        let fetchRequest = NSFetchRequest<ManagedLocation>(entityName: LocationController.entityName)
         let sortDescriptor1 = NSSortDescriptor(key: "id", ascending: true)
         let sortDescriptor2 = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]

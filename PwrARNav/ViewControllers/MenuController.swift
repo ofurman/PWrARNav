@@ -11,9 +11,9 @@ import CoreData
 
 class MenuController: UIViewController {
     
-    var menudata = [LocationViewModel]()
+    var menudata = [Location]()
     let cellReuseIdentifier = "menuCell"
-    var filteredLocations = [LocationViewModel]()
+    var filteredLocations = [Location]()
     let searchController = UISearchController(searchResultsController: nil)
     
     private var locationController: LocationControllerDelegate?

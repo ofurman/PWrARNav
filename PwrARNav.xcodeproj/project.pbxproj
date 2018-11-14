@@ -16,7 +16,7 @@
 		B71CCAC3216F8FFB009519AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B71CCAC2216F8FFB009519AC /* Assets.xcassets */; };
 		B71CCAC6216F8FFB009519AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71CCAC4216F8FFB009519AC /* LaunchScreen.storyboard */; };
 		B72D815F2180AC1D00D7FC27 /* PwrARNav.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B72D815D2180AC1D00D7FC27 /* PwrARNav.xcdatamodeld */; };
-		B753DA47217E326400E4FC5B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = B753DA46217E326400E4FC5B /* Location.swift */; };
+		B753DA47217E326400E4FC5B /* ManagedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B753DA46217E326400E4FC5B /* ManagedLocation.swift */; };
 		B755DA942173885B0035F21C /* MatrixHelperRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA932173885B0035F21C /* MatrixHelperRotation.swift */; };
 		B755DA9621738EB80035F21C /* BaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA9521738EB80035F21C /* BaseNode.swift */; };
 		B755DA982173CCAB0035F21C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA972173CCAB0035F21C /* LocationManager.swift */; };
@@ -27,7 +27,7 @@
 		B79133E821767EB800C819C2 /* CLLocationCoordinate2DExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79133E721767EB800C819C2 /* CLLocationCoordinate2DExt.swift */; };
 		B7D1C12521947DA600515F11 /* PwrARNavTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D1C12421947DA600515F11 /* PwrARNavTests.swift */; };
 		B7D24DFF2174CEA5008B93DA /* MessagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D24DFE2174CEA5008B93DA /* MessagePresenter.swift */; };
-		B7FA59B22184C64A00D8BB4B /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FA59B12184C64A00D8BB4B /* LocationViewModel.swift */; };
+		B7FA59B22184C64A00D8BB4B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FA59B12184C64A00D8BB4B /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,7 @@
 		B71CCAC5216F8FFB009519AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B71CCAC7216F8FFB009519AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B72D815E2180AC1D00D7FC27 /* PwrARNav.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PwrARNav.xcdatamodel; sourceTree = "<group>"; };
-		B753DA46217E326400E4FC5B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		B753DA46217E326400E4FC5B /* ManagedLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedLocation.swift; sourceTree = "<group>"; };
 		B755DA932173885B0035F21C /* MatrixHelperRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixHelperRotation.swift; sourceTree = "<group>"; };
 		B755DA9521738EB80035F21C /* BaseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNode.swift; sourceTree = "<group>"; };
 		B755DA972173CCAB0035F21C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 		B7D1C12421947DA600515F11 /* PwrARNavTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwrARNavTests.swift; sourceTree = "<group>"; };
 		B7D1C12621947DA600515F11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7D24DFE2174CEA5008B93DA /* MessagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePresenter.swift; sourceTree = "<group>"; };
-		B7FA59B12184C64A00D8BB4B /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		B7FA59B12184C64A00D8BB4B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +113,10 @@
 				B78A62C5217A30C60045846C /* ViewControllers */,
 				B79133E921767F1200C819C2 /* Services */,
 				B755DA922173815A0035F21C /* Extensions */,
+				B76C6DF5217E7AF300DC6E31 /* Workers */,
+				B76320A62181E08800D3083D /* Models */,
 				B78A62C4217A30B60045846C /* Assets */,
 				B78A62C6217A30D40045846C /* Views */,
-				B76320A62181E08800D3083D /* Model */,
-				B76C6DF5217E7AF300DC6E31 /* Controller */,
-				B7FA59B32184C64F00D8BB4B /* ViewModels */,
 			);
 			path = PwrARNav;
 			sourceTree = "<group>";
@@ -133,20 +132,21 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		B76320A62181E08800D3083D /* Model */ = {
+		B76320A62181E08800D3083D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B753DA46217E326400E4FC5B /* Location.swift */,
+				B7FA59B12184C64A00D8BB4B /* Location.swift */,
+				B753DA46217E326400E4FC5B /* ManagedLocation.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		B76C6DF5217E7AF300DC6E31 /* Controller */ = {
+		B76C6DF5217E7AF300DC6E31 /* Workers */ = {
 			isa = PBXGroup;
 			children = (
 				B76320A72181E91B00D3083D /* LocationController.swift */,
 			);
-			path = Controller;
+			path = Workers;
 			sourceTree = "<group>";
 		};
 		B78A62C4217A30B60045846C /* Assets */ = {
@@ -203,14 +203,6 @@
 				B7D1C12621947DA600515F11 /* Info.plist */,
 			);
 			path = PwrARNavTests;
-			sourceTree = "<group>";
-		};
-		B7FA59B32184C64F00D8BB4B /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				B7FA59B12184C64A00D8BB4B /* LocationViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,12 +310,12 @@
 			files = (
 				B71CCABE216F8FFA009519AC /* ARViewController.swift in Sources */,
 				B72D815F2180AC1D00D7FC27 /* PwrARNav.xcdatamodeld in Sources */,
-				B753DA47217E326400E4FC5B /* Location.swift in Sources */,
+				B753DA47217E326400E4FC5B /* ManagedLocation.swift in Sources */,
 				B755DA942173885B0035F21C /* MatrixHelperRotation.swift in Sources */,
 				B79133E821767EB800C819C2 /* CLLocationCoordinate2DExt.swift in Sources */,
 				B755DA982173CCAB0035F21C /* LocationManager.swift in Sources */,
 				B7D24DFF2174CEA5008B93DA /* MessagePresenter.swift in Sources */,
-				B7FA59B22184C64A00D8BB4B /* LocationViewModel.swift in Sources */,
+				B7FA59B22184C64A00D8BB4B /* Location.swift in Sources */,
 				B70D2D32217760ED0064A687 /* MenuController.swift in Sources */,
 				B79133E621767E9700C819C2 /* DoubleExt.swift in Sources */,
 				B755DA9621738EB80035F21C /* BaseNode.swift in Sources */,

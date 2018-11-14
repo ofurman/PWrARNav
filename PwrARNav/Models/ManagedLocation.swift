@@ -1,5 +1,5 @@
 //
-//  LocationStruct.swift
+//  ManagedLocation.swift
 //  PwrARNav
 //
 //  Created by Oleksii Furman on 22/10/2018.
@@ -8,7 +8,7 @@
 import CoreData
 
 @objc(Location)
-class Location: NSManagedObject, Codable {
+class ManagedLocation: NSManagedObject, Codable {
     private enum CodingKeys: String, CodingKey {
         case id
         case name
