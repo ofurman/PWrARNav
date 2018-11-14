@@ -63,6 +63,7 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
         locationManager.stopUpdatingHeading()
     }
     
+    @objc(locationManager:didUpdateHeading:)
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         if newHeading.headingAccuracy < 0 { return }
         

@@ -11,20 +11,34 @@
 		B70D2D32217760ED0064A687 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70D2D31217760ED0064A687 /* MenuController.swift */; };
 		B71CCABA216F8FF9009519AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71CCAB9216F8FF9009519AC /* AppDelegate.swift */; };
 		B71CCABC216F8FFA009519AC /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = B71CCABB216F8FFA009519AC /* art.scnassets */; };
-		B71CCABE216F8FFA009519AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71CCABD216F8FFA009519AC /* ViewController.swift */; };
+		B71CCABE216F8FFA009519AC /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71CCABD216F8FFA009519AC /* ARViewController.swift */; };
 		B71CCAC1216F8FFA009519AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71CCABF216F8FFA009519AC /* Main.storyboard */; };
 		B71CCAC3216F8FFB009519AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B71CCAC2216F8FFB009519AC /* Assets.xcassets */; };
 		B71CCAC6216F8FFB009519AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71CCAC4216F8FFB009519AC /* LaunchScreen.storyboard */; };
-		B753DA45217E2D9500E4FC5B /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B753DA44217E2D9500E4FC5B /* APIRouter.swift */; };
+		B72D815F2180AC1D00D7FC27 /* PwrARNav.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B72D815D2180AC1D00D7FC27 /* PwrARNav.xcdatamodeld */; };
+		B753DA47217E326400E4FC5B /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = B753DA46217E326400E4FC5B /* Location.swift */; };
 		B755DA942173885B0035F21C /* MatrixHelperRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA932173885B0035F21C /* MatrixHelperRotation.swift */; };
 		B755DA9621738EB80035F21C /* BaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA9521738EB80035F21C /* BaseNode.swift */; };
 		B755DA982173CCAB0035F21C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA972173CCAB0035F21C /* LocationManager.swift */; };
+		B76320A82181E91B00D3083D /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76320A72181E91B00D3083D /* LocationController.swift */; };
 		B79133E2217630EA00C819C2 /* CLLocationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79133E1217630EA00C819C2 /* CLLocationExt.swift */; };
 		B79133E4217632C900C819C2 /* SCNVector3Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79133E3217632C900C819C2 /* SCNVector3Ext.swift */; };
 		B79133E621767E9700C819C2 /* DoubleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79133E521767E9700C819C2 /* DoubleExt.swift */; };
 		B79133E821767EB800C819C2 /* CLLocationCoordinate2DExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79133E721767EB800C819C2 /* CLLocationCoordinate2DExt.swift */; };
+		B7D1C12521947DA600515F11 /* PwrARNavTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D1C12421947DA600515F11 /* PwrARNavTests.swift */; };
 		B7D24DFF2174CEA5008B93DA /* MessagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D24DFE2174CEA5008B93DA /* MessagePresenter.swift */; };
+		B7FA59B22184C64A00D8BB4B /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FA59B12184C64A00D8BB4B /* LocationViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B7D1C12721947DA600515F11 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B71CCAAE216F8FF9009519AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B71CCAB5216F8FF9009519AC;
+			remoteInfo = PwrARNav;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		B70D2D2F217760300064A687 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
@@ -32,24 +46,37 @@
 		B71CCAB6216F8FF9009519AC /* PwrARNav.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PwrARNav.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B71CCAB9216F8FF9009519AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B71CCABB216F8FFA009519AC /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		B71CCABD216F8FFA009519AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B71CCABD216F8FFA009519AC /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		B71CCAC0216F8FFA009519AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B71CCAC2216F8FFB009519AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B71CCAC5216F8FFB009519AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B71CCAC7216F8FFB009519AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B753DA44217E2D9500E4FC5B /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		B72D815E2180AC1D00D7FC27 /* PwrARNav.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PwrARNav.xcdatamodel; sourceTree = "<group>"; };
+		B753DA46217E326400E4FC5B /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		B755DA932173885B0035F21C /* MatrixHelperRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixHelperRotation.swift; sourceTree = "<group>"; };
 		B755DA9521738EB80035F21C /* BaseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNode.swift; sourceTree = "<group>"; };
 		B755DA972173CCAB0035F21C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		B76320A72181E91B00D3083D /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		B79133E1217630EA00C819C2 /* CLLocationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationExt.swift; sourceTree = "<group>"; };
 		B79133E3217632C900C819C2 /* SCNVector3Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNVector3Ext.swift; sourceTree = "<group>"; };
 		B79133E521767E9700C819C2 /* DoubleExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExt.swift; sourceTree = "<group>"; };
 		B79133E721767EB800C819C2 /* CLLocationCoordinate2DExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationCoordinate2DExt.swift; sourceTree = "<group>"; };
+		B7D1C12221947DA600515F11 /* PwrARNavTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PwrARNavTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7D1C12421947DA600515F11 /* PwrARNavTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwrARNavTests.swift; sourceTree = "<group>"; };
+		B7D1C12621947DA600515F11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7D24DFE2174CEA5008B93DA /* MessagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagePresenter.swift; sourceTree = "<group>"; };
+		B7FA59B12184C64A00D8BB4B /* LocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		B71CCAB3216F8FF9009519AC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B7D1C11F21947DA600515F11 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -63,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				B71CCAB8216F8FF9009519AC /* PwrARNav */,
+				B7D1C12321947DA600515F11 /* PwrARNavTests */,
 				B71CCAB7216F8FF9009519AC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				B71CCAB6216F8FF9009519AC /* PwrARNav.app */,
+				B7D1C12221947DA600515F11 /* PwrARNavTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,12 +109,15 @@
 			children = (
 				B71CCAC7216F8FFB009519AC /* Info.plist */,
 				B71CCAB9216F8FF9009519AC /* AppDelegate.swift */,
+				B72D815D2180AC1D00D7FC27 /* PwrARNav.xcdatamodeld */,
 				B78A62C5217A30C60045846C /* ViewControllers */,
 				B79133E921767F1200C819C2 /* Services */,
 				B755DA922173815A0035F21C /* Extensions */,
 				B78A62C4217A30B60045846C /* Assets */,
 				B78A62C6217A30D40045846C /* Views */,
-				B753DA44217E2D9500E4FC5B /* APIRouter.swift */,
+				B76320A62181E08800D3083D /* Model */,
+				B76C6DF5217E7AF300DC6E31 /* Controller */,
+				B7FA59B32184C64F00D8BB4B /* ViewModels */,
 			);
 			path = PwrARNav;
 			sourceTree = "<group>";
@@ -101,6 +133,22 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		B76320A62181E08800D3083D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B753DA46217E326400E4FC5B /* Location.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B76C6DF5217E7AF300DC6E31 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B76320A72181E91B00D3083D /* LocationController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		B78A62C4217A30B60045846C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,7 +161,7 @@
 		B78A62C5217A30C60045846C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				B71CCABD216F8FFA009519AC /* ViewController.swift */,
+				B71CCABD216F8FFA009519AC /* ARViewController.swift */,
 				B70D2D31217760ED0064A687 /* MenuController.swift */,
 			);
 			path = ViewControllers;
@@ -148,6 +196,23 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		B7D1C12321947DA600515F11 /* PwrARNavTests */ = {
+			isa = PBXGroup;
+			children = (
+				B7D1C12421947DA600515F11 /* PwrARNavTests.swift */,
+				B7D1C12621947DA600515F11 /* Info.plist */,
+			);
+			path = PwrARNavTests;
+			sourceTree = "<group>";
+		};
+		B7FA59B32184C64F00D8BB4B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B7FA59B12184C64A00D8BB4B /* LocationViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,18 +233,40 @@
 			productReference = B71CCAB6216F8FF9009519AC /* PwrARNav.app */;
 			productType = "com.apple.product-type.application";
 		};
+		B7D1C12121947DA600515F11 /* PwrARNavTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7D1C12B21947DA600515F11 /* Build configuration list for PBXNativeTarget "PwrARNavTests" */;
+			buildPhases = (
+				B7D1C11E21947DA600515F11 /* Sources */,
+				B7D1C11F21947DA600515F11 /* Frameworks */,
+				B7D1C12021947DA600515F11 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B7D1C12821947DA600515F11 /* PBXTargetDependency */,
+			);
+			name = PwrARNavTests;
+			productName = PwrARNavTests;
+			productReference = B7D1C12221947DA600515F11 /* PwrARNavTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		B71CCAAE216F8FF9009519AC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Oleksii Furman";
 				TargetAttributes = {
 					B71CCAB5216F8FF9009519AC = {
 						CreatedOnToolsVersion = 10.0;
+					};
+					B7D1C12121947DA600515F11 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = B71CCAB5216F8FF9009519AC;
 					};
 				};
 			};
@@ -197,6 +284,7 @@
 			projectRoot = "";
 			targets = (
 				B71CCAB5216F8FF9009519AC /* PwrARNav */,
+				B7D1C12121947DA600515F11 /* PwrARNavTests */,
 			);
 		};
 /* End PBXProject section */
@@ -214,6 +302,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B7D1C12021947DA600515F11 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -221,22 +316,41 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B71CCABE216F8FFA009519AC /* ViewController.swift in Sources */,
-				B753DA45217E2D9500E4FC5B /* APIRouter.swift in Sources */,
+				B71CCABE216F8FFA009519AC /* ARViewController.swift in Sources */,
+				B72D815F2180AC1D00D7FC27 /* PwrARNav.xcdatamodeld in Sources */,
+				B753DA47217E326400E4FC5B /* Location.swift in Sources */,
 				B755DA942173885B0035F21C /* MatrixHelperRotation.swift in Sources */,
 				B79133E821767EB800C819C2 /* CLLocationCoordinate2DExt.swift in Sources */,
 				B755DA982173CCAB0035F21C /* LocationManager.swift in Sources */,
 				B7D24DFF2174CEA5008B93DA /* MessagePresenter.swift in Sources */,
+				B7FA59B22184C64A00D8BB4B /* LocationViewModel.swift in Sources */,
 				B70D2D32217760ED0064A687 /* MenuController.swift in Sources */,
 				B79133E621767E9700C819C2 /* DoubleExt.swift in Sources */,
 				B755DA9621738EB80035F21C /* BaseNode.swift in Sources */,
 				B79133E4217632C900C819C2 /* SCNVector3Ext.swift in Sources */,
 				B71CCABA216F8FF9009519AC /* AppDelegate.swift in Sources */,
+				B76320A82181E91B00D3083D /* LocationController.swift in Sources */,
 				B79133E2217630EA00C819C2 /* CLLocationExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B7D1C11E21947DA600515F11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B7D1C12521947DA600515F11 /* PwrARNavTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B7D1C12821947DA600515F11 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B71CCAB5216F8FF9009519AC /* PwrARNav */;
+			targetProxy = B7D1C12721947DA600515F11 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B71CCABF216F8FFA009519AC /* Main.storyboard */ = {
@@ -410,6 +524,48 @@
 			};
 			name = Release;
 		};
+		B7D1C12921947DA600515F11 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8EX7H663R;
+				INFOPLIST_FILE = PwrARNavTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = oleksii.furman.PwrARNavTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PwrARNav.app/PwrARNav";
+			};
+			name = Debug;
+		};
+		B7D1C12A21947DA600515F11 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8EX7H663R;
+				INFOPLIST_FILE = PwrARNavTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = oleksii.furman.PwrARNavTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PwrARNav.app/PwrARNav";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -431,7 +587,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		B7D1C12B21947DA600515F11 /* Build configuration list for PBXNativeTarget "PwrARNavTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B7D1C12921947DA600515F11 /* Debug */,
+				B7D1C12A21947DA600515F11 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B72D815D2180AC1D00D7FC27 /* PwrARNav.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B72D815E2180AC1D00D7FC27 /* PwrARNav.xcdatamodel */,
+			);
+			currentVersion = B72D815E2180AC1D00D7FC27 /* PwrARNav.xcdatamodel */;
+			path = PwrARNav.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B71CCAAE216F8FF9009519AC /* Project object */;
 }
