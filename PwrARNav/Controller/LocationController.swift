@@ -17,6 +17,7 @@ protocol LocationControllerDelegate {
     
     func item(at index: Int) -> LocationViewModel?
     func fetchItems(completion: @escaping FetchItemsCompletionBlock)
+    func fetchItemsFromStorage(completion: @escaping FetchItemsCompletionBlock)
 }
 
 extension LocationControllerDelegate {
@@ -36,6 +37,17 @@ extension LocationControllerDelegate {
 }
 
 class LocationController: LocationControllerDelegate {
+    func fetchItemsFromStorage(completion: @escaping FetchItemsCompletionBlock) {
+        fetchItemsCompletionBlock = completion
+        if let locations = self.fetchFromStorage() {
+            let newLocations = LocationController.initViewModels(locations)
+            self.items?.append(contentsOf: newLocations)
+            DispatchQueue.main.async {
+                self.fetchItemsCompletionBlock?(true, nil)
+            }
+        }
+    }
+    
     func item(at index: Int) -> LocationViewModel? {
         guard index >= 0 && index < itemCount else { return nil }
         return items?[index] ?? nil
@@ -135,6 +147,7 @@ private extension LocationController {
         request.httpMethod = "GET"
         
         let config = URLSessionConfiguration.default
+//        config.timeoutIntervalForRequest = 5
         let session = URLSession(configuration: config)
         let task = session.dataTask(with: request) { [weak self] (responseData, response, responseError) in
             guard let strongSelf = self else { return }

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ARViewController.swift
 //  PwrARNav
 //
 //  Created by Oleksii Furman on 11/10/2018.
@@ -11,17 +11,17 @@ import SceneKit
 import ARKit
 import CoreLocation
 
-class ViewController: UIViewController {
-
-    @IBOutlet var sceneView: ARSCNView!
+class ARViewController: UIViewController {
     
+    @IBOutlet var sceneView: ARSCNView!
     private let configuration = ARWorldTrackingConfiguration()
     private var destinationNode: BaseNode?
     private var updateNodes: Bool = false
     private var currentLocation: CLLocation?
     private var updatedLocations = [CLLocation]()
     internal var startingLocation: CLLocation!
-    private var destinationLocation: CLLocation!
+    
+    var destinationLocation: LocationViewModel?
     
     var locationService: LocationManager?
     
@@ -35,8 +35,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        presentLocationSetupMessage()
         
         setupScene()
         setupLocationService()
@@ -54,35 +52,9 @@ class ViewController: UIViewController {
         sceneView.scene = scene
         runSession()
     }
-    
-    private func presentLocationSetupMessage() {
-        let ac = UIAlertController(title: "Choose location", message: "Choose test location", preferredStyle: .alert)
-        ac.addTextField { (textField) in
-            textField.placeholder = "Latitude"
-        }
-        ac.addTextField { (textField) in
-            textField.placeholder = "Longtitude"
-        }
-        let saveAction = UIAlertAction(title: "Save", style: .default) { (alert) in
-            let first = ac.textFields![0] as UITextField
-            let second = ac.textFields![1] as UITextField
-            let latitude = first.text
-            let longtitude = second.text
-            if let latitude = latitude, let longtitude = longtitude {
-                let lat = Double(latitude)!
-                let lon = Double(longtitude)!
-                self.destinationLocation = CLLocation(latitude: lat, longitude: lon)
-            }
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        ac.addAction(saveAction)
-        ac.addAction(cancelAction)
-        self.present(ac, animated: true)
-        navigationController?.navigationBar.isHidden = true
-    }
 }
 
-extension ViewController: MessagePresenter {
+extension ARViewController: MessagePresenter {
     func runSession() {
         configuration.worldAlignment = .gravityAndHeading
         sceneView.session.run(configuration, options: [.resetTracking])
@@ -93,8 +65,11 @@ extension ViewController: MessagePresenter {
         if updatedLocations.count > 0 {
             startingLocation = CLLocation.estimateBestLocation(locations: updatedLocations)
             if startingLocation != nil {
-                DispatchQueue.main.async {
-                    self.addSphere(for: self.destinationLocation)
+                if let destination = destinationLocation {
+                    let location = CLLocation(latitude: destination.latitude, longitude: destination.longitude)
+                    DispatchQueue.main.async {
+                        self.addSphere(for: location)
+                    }
                 }
             }
         }
@@ -137,7 +112,7 @@ extension ViewController: MessagePresenter {
     
 }
 
-extension ViewController: LocationManagerDelegate {
+extension ARViewController: LocationManagerDelegate {
     func trackingLocation(for currentLocation: CLLocation) {
         if currentLocation.horizontalAccuracy <= 65.0 {
             updatedLocations.append(currentLocation)

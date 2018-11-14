@@ -18,7 +18,6 @@ class MenuController: UIViewController {
     
     private var locationController: LocationControllerDelegate?
     
-    
     @IBOutlet weak var tableView: UITableView?
     
     public static func create(persistentContainer: NSPersistentContainer) -> MenuController {
@@ -35,29 +34,26 @@ class MenuController: UIViewController {
         
         populateMenuData()
         initializeTableView()
-        //        setUpSearchController()
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     func populateMenuData() {
         locationController?.fetchItems(completion: { [weak self] (success, error) in
             guard let strongSelf = self else { return }
             if !success {
-                DispatchQueue.main.async {
+                strongSelf.locationController?.fetchItemsFromStorage(completion: { (success, error) in
                     if let error = error {
-                        print(error)
+                        print(error.localizedDescription)
                     } else {
-                        print(error)
+                        DispatchQueue.main.async {
+                            strongSelf.tableView?.reloadData()
+                        }
                     }
-                }
+                })
             } else {
                 DispatchQueue.main.async {
                     strongSelf.tableView?.reloadData()
                 }
             }
-            
         })
     }
 }
@@ -65,9 +61,9 @@ class MenuController: UIViewController {
 //MARK: - Table View
 extension MenuController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return locationController?.itemCount ?? 0
+        return locationController!.itemCount
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (self.tableView?.dequeueReusableCell(withIdentifier: cellReuseIdentifier))!
         cell.textLabel?.text = locationController?.item(at: indexPath.row)?.name
@@ -81,65 +77,10 @@ extension MenuController: UITableViewDelegate, UITableViewDataSource {
         tableView?.dataSource = self
     }
     
-    
-    
-    //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    //        if isFiltering() {
-    //            return self.filteredLocations.count
-    //        }
-    //        return self.menudata.count
-    //    }
-    //
-    //    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    //        let cell = (self.tableView?.dequeueReusableCell(withIdentifier: cellReuseIdentifier))!
-    //        let locationName: String
-    //        if isFiltering() {
-    //            locationName = filteredLocations[indexPath.row].name
-    //        } else {
-    //            locationName = menudata[indexPath.row].name
-    //        }
-    //        cell.textLabel?.text = locationName
-    //        return cell
-    //    }
-    //
-    //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ViewController") as? ViewController
-    //        self.navigationController?.pushViewController(vc!, animated: true)
-    //    }
-    
-}
-
-//MARK: - SearchBar
-extension MenuController: UISearchResultsUpdating {
-
-    func setUpSearchController() {
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Entrance"
-        searchController.searchBar.barStyle = .default
-        searchController.searchBar.sizeToFit()
-        definesPresentationContext = true
-        navigationItem.searchController = searchController
-    }
-
-    func updateSearchResults(for searchController: UISearchController) {
-        filterContentForSearchText(searchController.searchBar.text!)
-    }
-
-    func searchBarIsEmpty() -> Bool {
-        return searchController.searchBar.text?.isEmpty ?? true
-    }
-
-    func filterContentForSearchText(_ searchText: String) {
-        filteredLocations = menudata.filter({ (menuitem) -> Bool in
-            return menuitem.name.lowercased().contains(searchText.lowercased())
-        })
-
-        tableView?.reloadData()
-    }
-
-    func isFiltering() -> Bool {
-        return searchController.isActive && !searchBarIsEmpty()
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ARViewController") as? ARViewController {
+            vc.destinationLocation = locationController?.item(at: indexPath.row)
+            present(vc, animated: true, completion: nil)
+        }
     }
 }
-
