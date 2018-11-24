@@ -1,5 +1,5 @@
 //
-//  LocationController.swift
+//  LocationWorker.swift
 //  PwrARNav
 //
 //  Created by Oleksii Furman on 25/10/2018.
@@ -36,11 +36,11 @@ extension LocationControllerDelegate {
     
 }
 
-class LocationController: LocationControllerDelegate {
+class LocationWorker: LocationControllerDelegate {
     func fetchItemsFromStorage(completion: @escaping FetchItemsCompletionBlock) {
         fetchItemsCompletionBlock = completion
         if let locations = self.fetchFromStorage() {
-            let newLocations = LocationController.initViewModels(locations)
+            let newLocations = LocationWorker.initViewModels(locations)
             self.items?.append(contentsOf: newLocations)
             DispatchQueue.main.async {
                 self.fetchItemsCompletionBlock?(true, nil)
@@ -73,7 +73,7 @@ class LocationController: LocationControllerDelegate {
 }
 
 
-private extension LocationController {
+private extension LocationWorker {
     
     static func initViewModels(_ locations: [ManagedLocation?]) -> [Location?] {
         return locations.map { location in
@@ -109,7 +109,7 @@ private extension LocationController {
     
     func clearStorage() {
         let managedObjectContext = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: LocationController.entityName)
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: LocationWorker.entityName)
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         do {
             try managedObjectContext.execute(batchDeleteRequest)
@@ -120,7 +120,7 @@ private extension LocationController {
     
     func fetchFromStorage() -> [ManagedLocation]? {
         let managedObjectContext = persistentContainer.viewContext
-        let fetchRequest = NSFetchRequest<ManagedLocation>(entityName: LocationController.entityName)
+        let fetchRequest = NSFetchRequest<ManagedLocation>(entityName: LocationWorker.entityName)
         let sortDescriptor1 = NSSortDescriptor(key: "id", ascending: true)
         let sortDescriptor2 = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor1, sortDescriptor2]
@@ -158,7 +158,7 @@ private extension LocationController {
             } else if let jsonData = responseData {
                 if strongSelf.parse(jsonData) {
                     if let locations = strongSelf.fetchFromStorage() {
-                        let newLocations = LocationController.initViewModels(locations) 
+                        let newLocations = LocationWorker.initViewModels(locations) 
                         strongSelf.items?.append(contentsOf: newLocations)
                         DispatchQueue.main.async {
                             strongSelf.fetchItemsCompletionBlock?(true, nil)
