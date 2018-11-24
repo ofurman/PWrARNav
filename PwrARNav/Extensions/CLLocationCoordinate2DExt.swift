@@ -41,7 +41,7 @@ extension CLLocationCoordinate2D {
         let distanceRadLon = distance / metersPerRadianLon
         let lat1 = self.latitude.toRadians()
         let lon1 = self.longitude.toRadians()
-        
+
         /*
          ‘d‘ being the distance travelled
          ‘R’ is the radius of Earth
@@ -49,17 +49,17 @@ extension CLLocationCoordinate2D {
          ‘φ’ is latitude
          ‘θ‘ is bearing (clockwise from north)
          ‘δ‘ is the angular distance d/R
-         
+
          φ2 = asin( sin φ1 ⋅ cos δ + cos φ1 ⋅ sin δ ⋅ cos θ )
          L2 = L1 + atan2( sin θ ⋅ sin δ ⋅ cos φ1, cos δ − sin φ1 ⋅ sin φ2 )
          */
-        
+
         let lat2 = asin(sin(lat1) * cos(distanceRadLat) + cos(lat1) * sin(distanceRadLat) * cos(bearing))
         let lon2 = lon1 + atan2(sin(bearing) * sin(distanceRadLon) * cos(lat1), cos(distanceRadLon) - sin(lat1) * sin(lat2))
-        
+
         return CLLocationCoordinate2D(latitude: lat2.toDegrees(), longitude: lon2.toDegrees())
     }
-    
-    
+
+
 }
 

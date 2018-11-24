@@ -16,11 +16,12 @@
 		B71CCAC3216F8FFB009519AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B71CCAC2216F8FFB009519AC /* Assets.xcassets */; };
 		B71CCAC6216F8FFB009519AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B71CCAC4216F8FFB009519AC /* LaunchScreen.storyboard */; };
 		B72D815F2180AC1D00D7FC27 /* PwrARNav.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B72D815D2180AC1D00D7FC27 /* PwrARNav.xcdatamodeld */; };
+		B74191CD21A58CFD003C0480 /* ManagedLocations+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B74191CC21A58CFD003C0480 /* ManagedLocations+CoreDataProperties.swift */; };
 		B753DA47217E326400E4FC5B /* ManagedLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B753DA46217E326400E4FC5B /* ManagedLocation.swift */; };
 		B755DA942173885B0035F21C /* MatrixHelperRotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA932173885B0035F21C /* MatrixHelperRotation.swift */; };
 		B755DA9621738EB80035F21C /* BaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA9521738EB80035F21C /* BaseNode.swift */; };
 		B755DA982173CCAB0035F21C /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B755DA972173CCAB0035F21C /* LocationManager.swift */; };
-		B76320A82181E91B00D3083D /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76320A72181E91B00D3083D /* LocationController.swift */; };
+		B76320A82181E91B00D3083D /* LocationWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B76320A72181E91B00D3083D /* LocationWorker.swift */; };
 		B79133E2217630EA00C819C2 /* CLLocationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79133E1217630EA00C819C2 /* CLLocationExt.swift */; };
 		B79133E4217632C900C819C2 /* SCNVector3Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79133E3217632C900C819C2 /* SCNVector3Ext.swift */; };
 		B79133E621767E9700C819C2 /* DoubleExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79133E521767E9700C819C2 /* DoubleExt.swift */; };
@@ -52,11 +53,12 @@
 		B71CCAC5216F8FFB009519AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B71CCAC7216F8FFB009519AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B72D815E2180AC1D00D7FC27 /* PwrARNav.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PwrARNav.xcdatamodel; sourceTree = "<group>"; };
+		B74191CC21A58CFD003C0480 /* ManagedLocations+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ManagedLocations+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B753DA46217E326400E4FC5B /* ManagedLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagedLocation.swift; sourceTree = "<group>"; };
 		B755DA932173885B0035F21C /* MatrixHelperRotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixHelperRotation.swift; sourceTree = "<group>"; };
 		B755DA9521738EB80035F21C /* BaseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNode.swift; sourceTree = "<group>"; };
 		B755DA972173CCAB0035F21C /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
-		B76320A72181E91B00D3083D /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
+		B76320A72181E91B00D3083D /* LocationWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWorker.swift; sourceTree = "<group>"; };
 		B79133E1217630EA00C819C2 /* CLLocationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocationExt.swift; sourceTree = "<group>"; };
 		B79133E3217632C900C819C2 /* SCNVector3Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCNVector3Ext.swift; sourceTree = "<group>"; };
 		B79133E521767E9700C819C2 /* DoubleExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExt.swift; sourceTree = "<group>"; };
@@ -135,8 +137,10 @@
 		B76320A62181E08800D3083D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B755DA9521738EB80035F21C /* BaseNode.swift */,
 				B7FA59B12184C64A00D8BB4B /* Location.swift */,
 				B753DA46217E326400E4FC5B /* ManagedLocation.swift */,
+				B74191CC21A58CFD003C0480 /* ManagedLocations+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -144,7 +148,7 @@
 		B76C6DF5217E7AF300DC6E31 /* Workers */ = {
 			isa = PBXGroup;
 			children = (
-				B76320A72181E91B00D3083D /* LocationController.swift */,
+				B76320A72181E91B00D3083D /* LocationWorker.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -183,7 +187,6 @@
 				B79133EA21767F2000C819C2 /* Helpers */,
 				B755DA972173CCAB0035F21C /* LocationManager.swift */,
 				B7D24DFE2174CEA5008B93DA /* MessagePresenter.swift */,
-				B755DA9521738EB80035F21C /* BaseNode.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B71CCABE216F8FFA009519AC /* ARViewController.swift in Sources */,
+				B74191CD21A58CFD003C0480 /* ManagedLocations+CoreDataProperties.swift in Sources */,
 				B72D815F2180AC1D00D7FC27 /* PwrARNav.xcdatamodeld in Sources */,
 				B753DA47217E326400E4FC5B /* ManagedLocation.swift in Sources */,
 				B755DA942173885B0035F21C /* MatrixHelperRotation.swift in Sources */,
@@ -321,7 +325,7 @@
 				B755DA9621738EB80035F21C /* BaseNode.swift in Sources */,
 				B79133E4217632C900C819C2 /* SCNVector3Ext.swift in Sources */,
 				B71CCABA216F8FF9009519AC /* AppDelegate.swift in Sources */,
-				B76320A82181E91B00D3083D /* LocationController.swift in Sources */,
+				B76320A82181E91B00D3083D /* LocationWorker.swift in Sources */,
 				B79133E2217630EA00C819C2 /* CLLocationExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

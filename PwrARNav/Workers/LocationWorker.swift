@@ -11,7 +11,7 @@ import CoreData
 
 typealias FetchItemsCompletionBlock = (_ success: Bool, _ error: NSError?) -> Void
 
-protocol LocationControllerDelegate {
+protocol LocationsStoreProtocol {
     var items: [Location?]? { get }
     var itemCount: Int { get }
     
@@ -20,7 +20,7 @@ protocol LocationControllerDelegate {
     func fetchItemsFromStorage(completion: @escaping FetchItemsCompletionBlock)
 }
 
-extension LocationControllerDelegate {
+extension LocationsStoreProtocol {
     var items: [Location?]? {
         return items
     }
@@ -36,7 +36,7 @@ extension LocationControllerDelegate {
     
 }
 
-class LocationWorker: LocationControllerDelegate {
+class LocationWorker: LocationsStoreProtocol {
     func fetchItemsFromStorage(completion: @escaping FetchItemsCompletionBlock) {
         fetchItemsCompletionBlock = completion
         if let locations = self.fetchFromStorage() {

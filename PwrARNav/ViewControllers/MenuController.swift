@@ -16,15 +16,15 @@ class MenuController: UIViewController {
     var filteredLocations = [Location]()
     let searchController = UISearchController(searchResultsController: nil)
     
-    private var locationController: LocationControllerDelegate?
+    private var locationController: LocationsStoreProtocol?
     
     @IBOutlet weak var tableView: UITableView?
     
     public static func create(persistentContainer: NSPersistentContainer) -> MenuController {
         let storyboard = UIStoryboard(name: "Menu", bundle: nil)
         let menuController = storyboard.instantiateViewController(withIdentifier: "MenuController") as! MenuController
-        let locationController = LocationController(persistentContainer: persistentContainer)
-        menuController.locationController = locationController
+        let locationsWorker = LocationWorker(persistentContainer: persistentContainer)
+        menuController.locationController = locationsWorker
         return menuController
     }
     

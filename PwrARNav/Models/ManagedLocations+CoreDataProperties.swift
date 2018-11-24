@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import CoreData
+
+extension ManagedLocation {
+    @NSManaged var id: Int
+    @NSManaged var name: String?
+    @NSManaged var latitude: Double
+    @NSManaged var longitude: Double
+}
