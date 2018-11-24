@@ -21,7 +21,7 @@ class ARViewController: UIViewController {
     private var updatedLocations = [CLLocation]()
     internal var startingLocation: CLLocation!
     
-    var destinationLocation: LocationViewModel?
+    var destinationLocation: Location?
     
     var locationService: LocationManager?
     

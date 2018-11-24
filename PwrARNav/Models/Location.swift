@@ -1,5 +1,5 @@
 //
-//  LocationViewModel.swift
+//  Location.swift
 //  PwrARNav
 //
 //  Created by Oleksii Furman on 27/10/2018.
@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct LocationViewModel {
+struct Location {
     let id: Int
     let name: String
     let latitude: Double
     let longitude: Double
     
-    init(location: Location) {
+    init(location: ManagedLocation) {
         self.id = location.id
         self.name = location.name ?? ""
         self.latitude = location.latitude
