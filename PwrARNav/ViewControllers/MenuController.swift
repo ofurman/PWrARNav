@@ -16,7 +16,7 @@ class MenuController: UIViewController {
     var filteredLocations = [Location]()
     let searchController = UISearchController(searchResultsController: nil)
     
-    private var locationController: LocationsStoreProtocol?
+    private var locationWorker: LocationsStoreProtocol?
     
     @IBOutlet weak var tableView: UITableView?
     
@@ -24,7 +24,7 @@ class MenuController: UIViewController {
         let storyboard = UIStoryboard(name: "Menu", bundle: nil)
         let menuController = storyboard.instantiateViewController(withIdentifier: "MenuController") as! MenuController
         let locationsWorker = LocationWorker(persistentContainer: persistentContainer)
-        menuController.locationController = locationsWorker
+        menuController.locationWorker = locationsWorker
         return menuController
     }
     
@@ -32,15 +32,16 @@ class MenuController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         populateMenuData()
         initializeTableView()
     }
     
     func populateMenuData() {
-        locationController?.fetchItems(completion: { [weak self] (success, error) in
+        locationWorker?.fetchItems(completion: { [weak self] (success, error) in
             guard let strongSelf = self else { return }
             if !success {
-                strongSelf.locationController?.fetchItemsFromStorage(completion: { (success, error) in
+                strongSelf.locationWorker?.fetchItemsFromStorage(completion: { (success, error) in
                     if let error = error {
                         print(error.localizedDescription)
                     } else {
@@ -61,12 +62,12 @@ class MenuController: UIViewController {
 //MARK: - Table View
 extension MenuController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return locationController!.itemCount
+        return locationWorker!.itemCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = (self.tableView?.dequeueReusableCell(withIdentifier: cellReuseIdentifier))!
-        cell.textLabel?.text = locationController?.item(at: indexPath.row)?.name
+        cell.textLabel?.text = locationWorker?.item(at: indexPath.row)?.name
         return cell
     }
     
@@ -75,11 +76,14 @@ extension MenuController: UITableViewDelegate, UITableViewDataSource {
         self.tableView?.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         tableView?.delegate = self
         tableView?.dataSource = self
+        self.navigationController!.isNavigationBarHidden = false
+        self.navigationItem.title = "Choose location:"
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let vc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ARViewController") as? ARViewController {
-            vc.destinationLocation = locationController?.item(at: indexPath.row)
+            vc.destinationLocation = locationWorker?.item(at: indexPath.row)
             present(vc, animated: true, completion: nil)
         }
     }

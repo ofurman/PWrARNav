@@ -66,7 +66,6 @@ public class LocationManager: NSObject, CLLocationManagerDelegate {
     @objc(locationManager:didUpdateHeading:)
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         if newHeading.headingAccuracy < 0 { return }
-        
         let heading = newHeading.trueHeading > 0 ? newHeading.trueHeading : newHeading.magneticHeading
         userHeading = heading
         NotificationCenter.default.post(name: Notification.Name(rawValue: "myNotificationName"), object: self)

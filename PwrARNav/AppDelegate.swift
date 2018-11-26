@@ -92,8 +92,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func instantiateMainViewController() {
         let mainViewController = MenuController.create(persistentContainer: persistentContainer)
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
+//        self.window?.rootViewController = mainViewController
+//        self.window?.makeKeyAndVisible()
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = mainViewController
+        let nav1 = UINavigationController()
+        nav1.viewControllers = [mainViewController]
+        self.window!.rootViewController = nav1
         self.window?.makeKeyAndVisible()
     }
 

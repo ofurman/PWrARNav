@@ -12,6 +12,6 @@ extension Double {
     }
     
     func toDegrees() -> Double {
-        return self * 180 / .pi
+        return self * (180 / .pi)
     }
 }

@@ -58,7 +58,7 @@ class LocationWorker: LocationsStoreProtocol {
         loadLocations()
     }
     
-    private static let entityName = "Location"
+    private static let entityName = "ManagedLocation"
     
     var items: [Location?]? = []
     

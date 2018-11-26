@@ -23,9 +23,12 @@ extension CLLocationCoordinate2D {
          X = cos θb * sin ∆L
          Y = cos θa * sin θb — sin θa * cos θb * cos ∆L
          */
-        let a = sin(coordinate.longitude.toRadians() - longitude.toRadians()) * cos(coordinate.latitude.toRadians())
-        let b = cos(latitude.toRadians()) * sin(coordinate.latitude.toRadians()) - sin(latitude.toRadians()) * cos(coordinate.latitude.toRadians()) * cos(coordinate.longitude.toRadians() - longitude.toRadians())
-        return atan2(a, b)
+        let x = sin(coordinate.longitude.toRadians() - longitude.toRadians()) *
+            cos(coordinate.latitude.toRadians())
+        let y = cos(latitude.toRadians()) * sin(coordinate.latitude.toRadians()) -
+            sin(latitude.toRadians()) * cos(coordinate.latitude.toRadians()) *
+            cos(coordinate.longitude.toRadians() - longitude.toRadians())
+        return atan2(x, y)
     }
     func direction(to coordinate: CLLocationCoordinate2D) -> CLLocationDirection {
         return self.calculateBearing(to: coordinate).toDegrees()

@@ -7,7 +7,7 @@
 //
 import CoreData
 
-@objc(Location)
+@objc(ManagedLocation)
 class ManagedLocation: NSManagedObject, Codable {
     private enum CodingKeys: String, CodingKey {
         case id
@@ -15,11 +15,11 @@ class ManagedLocation: NSManagedObject, Codable {
         case latitude
         case longitude
     }
-
+    
     required convenience init(from decoder: Decoder) throws {
         guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext,
             let managedObjectContext = decoder.userInfo[codingUserInfoKeyManagedObjectContext] as? NSManagedObjectContext,
-            let entity = NSEntityDescription.entity(forEntityName: "Location", in: managedObjectContext) else {
+            let entity = NSEntityDescription.entity(forEntityName: "ManagedLocation", in: managedObjectContext) else {
                 fatalError("Failed to decode Location")
         }
         
