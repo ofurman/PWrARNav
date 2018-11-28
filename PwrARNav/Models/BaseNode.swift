@@ -38,7 +38,16 @@ class BaseNode: SCNNode {
         let geometry = SCNSphere(radius: radius)
         geometry.firstMaterial?.diffuse.contents = color
         let sphereNode = SCNNode(geometry: geometry)
-        return sphereNode
+//        return sphereNode
+        let newText = SCNText(string: "Destination", extrusionDepth: 0.2)
+        newText.font = UIFont(name: "Helvetica", size: 1)
+        newText.firstMaterial?.diffuse.contents = UIColor.red
+        newText.firstMaterial?.transparency = 1
+        let textNode = SCNNode(geometry: newText)
+        let annotationNode = SCNNode()
+        annotationNode.addChildNode(textNode)
+        annotationNode.addChildNode(sphereNode)
+        return annotationNode
     }
     
     func addSphere(with radius: CGFloat, and color: UIColor) {
@@ -48,15 +57,17 @@ class BaseNode: SCNNode {
     
     func addNode(with radius: CGFloat, and color: UIColor, and text: String) {
         let sphereNode = createSphereNode(with: radius, color: color)
-        let newText = SCNText(string: title, extrusionDepth: 0.05)
-        newText.font = UIFont(name: "Helvetica", size: 1)
+        let newText = SCNText(string: text, extrusionDepth: 0.1)
+        newText.font = UIFont(name: "Helvetica", size: 5)
         newText.firstMaterial?.diffuse.contents = UIColor.red
+        newText.firstMaterial?.transparency = 0
         let _textNode = SCNNode(geometry: newText)
         let annotationNode = SCNNode()
         annotationNode.addChildNode(_textNode)
         annotationNode.position = sphereNode.position
         addChildNode(sphereNode)
         addChildNode(annotationNode)
+        print(annotationNode)
     }
     
 }

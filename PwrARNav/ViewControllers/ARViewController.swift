@@ -104,6 +104,7 @@ extension ARViewController: MessagePresenter {
         let stepAnchor = ARAnchor(transform: locationTransform)
         let sphere = BaseNode(title: "Destination", location: location)
         sphere.addSphere(with: 0.5, and: .blue)
+//        sphere.addNode(with: 10, and: .red, and: "DESTINATION")
         sphere.location = location
         sceneView.session.add(anchor: stepAnchor)
         sceneView.scene.rootNode.addChildNode(sphere)
